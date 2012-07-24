@@ -1,0 +1,49 @@
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: eyal
+ * Date: 7/24/12
+ * Time: 12:56 PM
+ * To change this template use File | Settings | File Templates.
+ */
+
+include_once "/var/www/CodeIgniter_2.1.1/application/CIFormTutorial/models/obj/YahooStock.php";
+
+class Calculator
+{
+    public $yahooInfo;
+
+    public function __construct() {
+        $this->yahooInfo = new YahooStock();
+
+        $this->yahooInfo->addFormat("snl1d1t1cv");
+
+        $this->yahooInfo->addStock("msft");
+        $this->yahooInfo->addStock("amzn");
+        $this->yahooInfo->addStock("yhoo");
+        $this->yahooInfo->addStock("goog");
+        $this->yahooInfo->addStock("vgz");
+    }
+
+
+
+    public function get_profit($symbol, $amount, $buy_price) {
+        // current_price = get price now
+        // profit = (current_price - buy_price) * amount
+        $stock_info = $this->yahooInfo->getQuote($symbol);
+        $current_price = $stock_info[2];
+        $profit = ($current_price - $buy_price) * $amount;
+        var_dump($amount, $buy_price);
+        return $profit;
+    }
+
+    public function get_profits($positions) {
+        $profits = array();
+        foreach($positions as $index => $position) {
+            $profit = $this->get_profit($position['symbol'], $position['amount'], $position['buy_price']);
+            $profits[$position['id']] = $profit;
+        }
+
+        return $profits;
+    }
+}
