@@ -6,11 +6,14 @@
  * Time: 11:29 AM
  * To change this template use File | Settings | File Templates.
  */
+
+$this->load->helper('url');
 ?>
 
 <html>
 <head>
-    <title><?php echo $title ?> - Buller </title>
+    <link rel="stylesheet" href="<?php echo base_url() ?>application/CIFormTutorial/views/assets/css/style.css" type="text/css" media="screen"/>
+    <title>Buller</title>
 </head>
 <body>
-<h1><?php echo $title ?></h1>
+

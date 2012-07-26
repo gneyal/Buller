@@ -33,15 +33,40 @@ class users extends CI_Controller
 
         // 4. load the relevant view
         $data['title'] = "Users List";
+        $users = $this->user_model->get_users();
+
+        $users_by_profit = $this->position_model->get_all_users_total_profit($users);
+        $users = $this->sort_users_by_profit($users, $users_by_profit);
+        $users = array_reverse( $users);
+        $data['users'] = $users;
+        $data['users_by_profit'] = $users_by_profit;
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navigation_bar', $data);
-
-        $data['users'] = $this->user_model->get_users();
+        $this->load->view('templates/title', $data);
         $this->load->view('users/users_list', $data);
-
         $this->load->view('templates/footer');
     }
 
+    private function sort_users_by_profit($users, $users_by_profit) {
+        $users_to_return = array();
+
+        foreach ($users_by_profit as $name => $profit) {
+            foreach ($users as $index => $user) {
+                if ($name == $user['username']) {
+                    $users_to_return[] = $user;
+                    unset($users[$index]);
+                }
+            }
+        }
+
+        return $users_to_return;
+    }
+
+
+    private function cmp_by_optionNumber($a, $b) {
+        return $a["optionNumber"] - $b["optionNumber"];
+    }
     public function single($username) {
         // 1. load the model (moved to ctor)
 
@@ -59,6 +84,7 @@ class users extends CI_Controller
 //        // 4. load the view with data
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navigation_bar', $data);
+        $this->load->view('templates/title', $data);
         $this->load->view('users/user_profile', $data);
         $this->load->view('stocks/positions', $data);
         $this->load->view('templates/footer');

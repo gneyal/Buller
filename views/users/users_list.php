@@ -18,5 +18,6 @@
 
     <li><?php echo $user['email'] ?></li>
     <li>Cash: <?php echo $user['cash']; ?></li>
+    <li>Profit: <?php echo $users_by_profit[$user['username']]; ?></li>
 </ul>
 <?php } ?>

@@ -34,4 +34,33 @@ class Position_model extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete('positions');
     }
+
+    /**
+     * @return an array, key=>value, where key is username and value is total_profit
+     * @param $users
+     */
+    public function get_user_total_profit($user) {
+        $calc = new Calculator();
+
+        $positions = $this->read_positions($user['username']);
+        $profits = $this->calc->get_profits($positions);
+
+        $total = 0;
+        foreach($profits as $id => $position_profit) {
+            $total += $position_profit;
+        }
+
+        return $total;
+    }
+    public function get_all_users_total_profit($users) {
+        $total_profits = array();
+
+        foreach($users as $index => $user) {
+            $user_total_profit = $this->get_user_total_profit($user);
+            $total_profits[$user['username']] = $user_total_profit;
+        }
+
+        return $total_profits;
+    }
+
 }

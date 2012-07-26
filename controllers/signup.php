@@ -21,6 +21,7 @@ class Signup extends CI_Controller
 
         $this->load->library('form_validation');
 
+        // TODO: need to change that to the noraml presentation of things using templates.
         $this->load->view('loginsignup/loginsignup');
     }
 
@@ -51,6 +52,7 @@ class Signup extends CI_Controller
 
             $this->load->view('templates/header', $data);
             $this->load->view('templates/navigation_bar');
+            $this->load->view('templates/title', $data);
             $this->load->view('users/users_list', $data);
             $this->load->view('templates/footer');
         }

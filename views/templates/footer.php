@@ -6,7 +6,9 @@
  * Time: 11:31 AM
  * To change this template use File | Settings | File Templates.
  */ ?>
+<footer class="footer">
+    <strong>Buller &copy; 2012</strong>
+</footer>
 
-<strong>&copy; 2011</strong>
 </body>
 </html>

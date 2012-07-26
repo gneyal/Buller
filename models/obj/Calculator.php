@@ -33,7 +33,7 @@ class Calculator
         $stock_info = $this->yahooInfo->getQuote($symbol);
         $current_price = $stock_info[2];
         $profit = ($current_price - $buy_price) * $amount;
-        var_dump($amount, $buy_price);
+
         return $profit;
     }
 
@@ -46,4 +46,7 @@ class Calculator
 
         return $profits;
     }
+
+
+
 }

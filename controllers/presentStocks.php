@@ -32,6 +32,7 @@ class PresentStocks extends CI_Controller
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navigation_bar');
+        $this->load->view('templates/title', $data);
         $this->load->view('stocks/stocks_list', $data);
         $this->load->view('templates/footer');
     }
@@ -43,6 +44,7 @@ class PresentStocks extends CI_Controller
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navigation_bar');
+        $this->load->view('templates/title', $data);
         $this->load->view('stocks/single_stock', $data);
         $this->load->view('templates/footer');
     }
