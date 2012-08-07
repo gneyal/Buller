@@ -1,0 +1,25 @@
+Database setup:
+
+mysql> describe users;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| username | varchar(40) | NO   | UNI | NULL    |                |
+| password | varchar(40) | NO   |     | NULL    |                |
+| email    | varchar(40) | NO   | UNI | NULL    |                |
+| cash     | int(11)     | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> describe users;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| username | varchar(40) | NO   | UNI | NULL    |                |
+| password | varchar(40) | NO   |     | NULL    |                |
+| email    | varchar(40) | NO   | UNI | NULL    |                |
+| cash     | int(11)     | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
