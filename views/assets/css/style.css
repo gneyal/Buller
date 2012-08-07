@@ -1,3 +1,10 @@
+body {
+    background: #e3e3e3;
+    font-family: sans-serif;
+    width: 800px;
+    margin: auto;
+}
+
 .navig {
     background-color: #B8B8B8 ;
     margin: 0;

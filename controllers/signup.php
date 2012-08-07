@@ -119,9 +119,9 @@ class Signup extends CI_Controller
 
                     header("Location: http://localhost/CodeIgniter_2.1.1/index.php/users");
                 }
-                else $this->load->view('loginsignup/login');
+                else redirect('/signup/login');
             }
-            else $this->load->view('loginsignup/login');
+            else redirect('/signup/login');
 
         }
     }
