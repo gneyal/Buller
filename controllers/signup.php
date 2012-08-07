@@ -22,7 +22,16 @@ class Signup extends CI_Controller
         $this->load->library('form_validation');
 
         // TODO: need to change that to the noraml presentation of things using templates.
+
+
+        $data['title'] = 'Login or Signup'; // for the title template
+
+        $this->load->view('templates/header', $data);
+        //$this->load->view('templates/navigation_bar', $data);
+        $this->load->view('templates/buller_title');
+        $this->load->view('templates/title', $data);
         $this->load->view('loginsignup/loginsignup');
+        $this->load->view('templates/footer');
     }
 
     public function signups() {
@@ -37,7 +46,14 @@ class Signup extends CI_Controller
 
         if ($this->form_validation->run() == FALSE)
         {
+            $data['title'] = 'Signup'; // for the title template
+
+            $this->load->view('templates/header', $data);
+            //$this->load->view('templates/navigation_bar', $data);
+            $this->load->view('templates/buller_title');
+            $this->load->view('templates/title', $data);
             $this->load->view('loginsignup/signup');
+            $this->load->view('templates/footer');
         }
         else
         {
@@ -71,13 +87,20 @@ class Signup extends CI_Controller
 
         if ($this->form_validation->run() == FALSE)
         {
+            $data['title'] = 'Login'; // for the title template
+
+            $this->load->view('templates/header', $data);
+            //$this->load->view('templates/navigation_bar', $data);
+            $this->load->view('templates/buller_title');
+            $this->load->view('templates/title', $data);
             $this->load->view('loginsignup/login');
+            $this->load->view('templates/footer');
         }
         else
         {
             $user = $this->user_model->get_users($_POST['username']);
             if ($user) {
-                if ($user['password'] == $_POST['password']){
+                if ($user['password'] == md5($_POST['password'])){
                     $this->session->set_userdata(array('activeuser' => $_POST['username']));
 
                     header("Location: http://localhost/CodeIgniter_2.1.1/index.php/users");
@@ -92,7 +115,7 @@ class Signup extends CI_Controller
     public function logout() {
         $this->session->unset_userdata('activeuser');
 
-        $this->show_loginsignup_view();
+        $this->index();
     }
 
     public function show_loginsignup_view() {

@@ -14,9 +14,9 @@
     <title></title>
 </head>
 <body>
-<ul>
-    <li><a href="/CodeIgniter_2.1.1/index.php/signup/show_login_view">Login</a></li>
-    <li><a href="/CodeIgniter_2.1.1/index.php/signup/show_signup_view">Sign Up</li>
+<ul class="">
+    <li><a href="/CodeIgniter_2.1.1/index.php/signup/login">Login</a></li>
+    <li><a href="/CodeIgniter_2.1.1/index.php/signup/signups">Sign Up</li>
 </ul>
 
 </body>

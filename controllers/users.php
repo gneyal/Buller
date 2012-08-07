@@ -43,6 +43,7 @@ class users extends CI_Controller
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navigation_bar', $data);
+        $this->load->view('templates/buller_title');
         $this->load->view('templates/title', $data);
         $this->load->view('users/users_list', $data);
         $this->load->view('templates/footer');
@@ -84,6 +85,7 @@ class users extends CI_Controller
 //        // 4. load the view with data
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navigation_bar', $data);
+        $this->load->view('templates/buller_title');
         $this->load->view('templates/title', $data);
         $this->load->view('users/user_profile', $data);
         $this->load->view('stocks/positions', $data);

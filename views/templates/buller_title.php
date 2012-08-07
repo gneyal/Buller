@@ -2,10 +2,10 @@
 /**
  * Created by JetBrains PhpStorm.
  * User: eyal
- * Date: 7/25/12
- * Time: 12:43 PM
+ * Date: 8/7/12
+ * Time: 10:23 AM
  * To change this template use File | Settings | File Templates.
  */
 ?>
 
-<h2><?php echo $title ?></h2>
+<h1 id="buller_title">Buller</h1>

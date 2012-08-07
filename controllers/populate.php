@@ -17,7 +17,6 @@ class populate extends CI_Controller
     public function index() {
         $this->user_model->insert_user("eyaleyal", "eyalpass", "eyal@email.com", 1000);
         $this->user_model->insert_user("assafassaf", "assafpass", "assaf@email.com", 1000);
-        $this->user_model->insert_user("elramelram", "elrampass", "elram@email.com", 1000);
         $this->user_model->insert_user("daviddavid", "davidpass", "david@email.com", 1000);
         echo "Populated table \"users\" ";
     }
@@ -36,6 +35,16 @@ class populate extends CI_Controller
         $this->position_model->create_position("eyaleyal", "Goog", 326, 131);
         $this->position_model->create_position("eyaleyal", "APPL", 403, 5550);
         $this->position_model->create_position("eyaleyal", "INTL", 120, 840);
+
+        $this->position_model->create_position("assafassaf", "MSFT", 40, 70);
+        $this->position_model->create_position("assafassaf", "Goog", 26, 11);
+        $this->position_model->create_position("assafassaf", "APPL", 40, 540);
+        $this->position_model->create_position("assafassaf", "INTL", 20, 810);
+
+        $this->position_model->create_position("daviddavid", "MSFT", 400, 150);
+        $this->position_model->create_position("daviddavid", "Goog", 326, 131);
+        $this->position_model->create_position("daviddavid", "APPL", 403, 5550);
+        $this->position_model->create_position("daviddavid", "INTL", 120, 840);
 
         echo "Populated positions table";
     }

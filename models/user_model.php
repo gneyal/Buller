@@ -31,7 +31,7 @@ class User_model extends CI_Model
 
     public function update_user_password($username, $password) {
         $this->db->where('username', $username);
-        $data = array('password' => $password);
+        $data = array('password' => md5($password));
         $this->db->update('users', $data);
     }
 
@@ -41,7 +41,7 @@ class User_model extends CI_Model
     }
 
     public function insert_user($username, $password, $email, $cash) {
-        $data = array('username' => $username, 'email' => $email, 'password' => $password, 'cash' => $cash);
+        $data = array('username' => $username, 'email' => $email, 'password' => md5($password), 'cash' => $cash);
         $this->db->insert('users', $data);
     }
 }
