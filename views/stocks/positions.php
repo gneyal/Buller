@@ -17,6 +17,8 @@
         </li>
         <li>Amount: <?php echo $row['amount']; ?></li>
         <li>BuyPrice: <?php echo $row['buy_price']; ?></li>
+        <?php $current_price = $current_prices[$row['id']] ?>
+        <li>Current Price: <?= $current_price ?></li>
         <?php $profit = $profits_for_position_id[$row['id']]; ?>
         <li>Profit (not random): <?php echo $profit; ?></li>
         <?php $session_data = $this->session->all_userdata(); ?>
@@ -31,7 +33,7 @@
                 // the profit that i am now updating is on the moment the page was loaded
                 // this obviously should change later on
                 -->
-                <input name="profit" value="<?php echo $profit ?>" type="hidden" />
+                <input name="add_to_cash" value="<?php echo ($current_price * $row['amount']) ?>" type="hidden" />
 
                 <input type="submit" value="Sell">
             </form>

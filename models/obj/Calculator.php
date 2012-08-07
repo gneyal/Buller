@@ -26,12 +26,26 @@ class Calculator
     }
 
 
-
-    public function get_profit($symbol, $amount, $buy_price) {
-        // current_price = get price now
-        // profit = (current_price - buy_price) * amount
+    public function get_current_price($symbol) {
         $stock_info = $this->yahooInfo->getQuote($symbol);
         $current_price = $stock_info[2];
+
+        return $current_price;
+    }
+
+    public function get_current_prices($positions) {
+        $current_prices = array();
+        foreach($positions as $index => $position) {
+            $current_price = $this->get_current_price($position['symbol']);
+            $current_prices[$position['id']] = $current_price;
+        }
+
+        return $current_prices;
+    }
+
+    public function get_profit($symbol, $amount, $buy_price) {
+        $current_price = $this->get_current_price($symbol);
+
         $profit = ($current_price - $buy_price) * $amount;
 
         return $profit;

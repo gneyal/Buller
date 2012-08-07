@@ -80,6 +80,7 @@ class users extends CI_Controller
         $data['title'] = "Single user page";
         $data['positions_to_present'] = $positions_to_present;
 
+        $data['current_prices'] = $this->calc->get_current_prices($positions_to_present);
         $data['profits_for_position_id'] = $this->calc->get_profits($positions_to_present);
 
 //        // 4. load the view with data
@@ -87,6 +88,11 @@ class users extends CI_Controller
         $this->load->view('templates/navigation_bar', $data);
         $this->load->view('templates/buller_title');
         $this->load->view('templates/title', $data);
+        if ($this->session->userdata('notice')) {
+            $data['notice'] = $this->session->userdata('notice');
+            $this->session->unset_userdata('notice');
+            $this->load->view('templates/notice', $data);
+        }
         $this->load->view('users/user_profile', $data);
         $this->load->view('stocks/positions', $data);
         $this->load->view('templates/footer');
@@ -95,16 +101,18 @@ class users extends CI_Controller
     public function sell() {
         $position_id = $_POST['position_id'];
         $username = $_POST['username'];
-        $profit = $_POST['profit'];
+        $add_to_cash = $_POST['add_to_cash'];
 
         $this->position_model->delete_position($position_id);
         $user = $this->user_model->get_users($username);
 
-        $this->user_model->update_user($user['username'], $user['email'], $user['cash'] + $profit );
+        $this->user_model->update_user($user['username'], $user['email'], $user['cash'] + $add_to_cash );
         $this->single($username);
     }
 
     public function buy() {
+        $this->load->helper(array('form', 'url'));
+
         $username = $_POST['username'];
         $symbol = $_POST['symbol'];
         $amount = $_POST['amount'];
@@ -112,10 +120,16 @@ class users extends CI_Controller
         $deal = $amount * $buy_price;
 
         $user = $this->user_model->get_users($username);
+        if ($user['cash'] < $deal) {
+            $msg = "You don't have enough cash for that position";
+            $this->session->set_userdata(array('notice' => $msg));
+            redirect("/users/single/" . $user['username']);
+        } else {
+            $this->position_model->create_position($username, $symbol, $amount, $buy_price);
+            $this->user_model->update_user($username, $user['email'], $user['cash'] - $deal);
+        }
 
-        $this->position_model->create_position($username, $symbol, $amount, $buy_price);
-        $this->user_model->update_user($username, $user['email'], $user['cash'] - $deal);
-
-        $this->single($username);
+        //$this->single($username);
+        redirect("/users/single/$username");
     }
 }
