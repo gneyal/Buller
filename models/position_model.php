@@ -60,6 +60,11 @@ class Position_model extends CI_Model
             $total_profits[$user['username']] = $user_total_profit;
         }
 
+        /*
+         * sorting by value
+         */
+        asort($total_profits);
+
         return $total_profits;
     }
 

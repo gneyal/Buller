@@ -57,11 +57,19 @@ class Signup extends CI_Controller
         }
         else
         {
+            /*
+             * adding the user to the database
+             */
             $this->load->model('user_model');
             $this->user_model->insert_user($_POST['username'], $_POST['password'], $_POST['email'], $this->initial_cash);
 
-            // let the session know about the new user is online
+            /*
+             * setting the 'activeuser' variable in the session array
+             */
             $this->session->set_userdata(array('activeuser' => $_POST['username']));
+
+            /*
+
             $data['title'] = "Users List";
             $users = $this->user_model->get_users();
             $data['users'] = $users;
@@ -71,6 +79,12 @@ class Signup extends CI_Controller
             $this->load->view('templates/title', $data);
             $this->load->view('users/users_list', $data);
             $this->load->view('templates/footer');
+            */
+
+            /*
+             * redirecting to the users controller, to the index action
+             */
+            redirect('/users/index');
         }
     }
 

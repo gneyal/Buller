@@ -8,16 +8,8 @@
  */
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+
 <ul class="">
     <li><a href="/CodeIgniter_2.1.1/index.php/signup/login">Login</a></li>
-    <li><a href="/CodeIgniter_2.1.1/index.php/signup/signups">Sign Up</li>
+    <li><a href="/CodeIgniter_2.1.1/index.php/signup/signups">Sign Up</a></li>
 </ul>
-
-</body>
-</html>

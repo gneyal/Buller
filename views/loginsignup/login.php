@@ -8,11 +8,6 @@
  */
 ?>
 
-<html>
-<head>
-    <title>Login</title>
-</head>
-<body>
 
 <?php echo validation_errors(); ?>
 
@@ -28,5 +23,3 @@
 
 </form>
 
-</body>
-</html>

@@ -21,6 +21,7 @@
         <li>Profit (not random): <?php echo $profit; ?></li>
         <?php $session_data = $this->session->all_userdata(); ?>
         <?php if ($session_data['activeuser'] == $user['username']) { ?>
+        <li>
             <form method="POST" action="/CodeIgniter_2.1.1/index.php/users/sell">
                 <input name="username" value="<?php echo $row['username']; ?>" type="hidden" />
                 <input name="position_id" value="<?php echo $row['id']; ?>" type="hidden" />
@@ -34,6 +35,7 @@
 
                 <input type="submit" value="Sell">
             </form>
+        </li>
         <?php } ?>
     </ul>
 

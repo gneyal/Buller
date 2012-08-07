@@ -14,5 +14,5 @@
         <li><a href="/CodeIgniter_2.1.1/index.php/users/">Users List</a></li>
         <li><a href="/CodeIgniter_2.1.1/index.php/presentStocks/">Stocks List</a></li>
         <li><a href="/CodeIgniter_2.1.1/index.php/signup/logout">Logout</a></li>
-    <ul>
+    </ul>
 </nav>

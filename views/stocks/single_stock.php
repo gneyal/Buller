@@ -24,12 +24,14 @@ $session_data = $this->session->all_userdata();
     <li>Price: <?php echo $price?></li>
     <li>Volume: <?php echo $volume?></li>
 
-    <form method="post" action="/CodeIgniter_2.1.1/index.php/users/buy">
-        <input type="text" name="amount" />
-        <input type="hidden" name="username" value="<?php echo $session_data['activeuser']; ?>" />
+    <li>
+        <form method="post" action="/CodeIgniter_2.1.1/index.php/users/buy">
+            <input type="text" name="amount" />
+            <input type="hidden" name="username" value="<?php echo $session_data['activeuser']; ?>" />
 
-        <input type="hidden" name="symbol" value="<?php echo($symbol);?>" />
-        <input type="hidden" name="buy_price" value="<?php echo $price; ?>" />
-        <input type="submit" value="Buy" />
-    </form>
+            <input type="hidden" name="symbol" value="<?php echo($symbol);?>" />
+            <input type="hidden" name="buy_price" value="<?php echo $price; ?>" />
+            <input type="submit" value="Buy" />
+        </form>
+    </li>
 </ul>
