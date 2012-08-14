@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */ ?>
 
-
+<!--
 
 
 
@@ -16,4 +16,19 @@
     <li><?php echo $user['email'] ?></li>
     <li><?php echo $user['cash'] ?></li>
 </ul>
+-->
 
+
+<table class="table table-striped">
+	<tr>
+		<td>Username</td>
+		<td>Email</td>
+		<td>Cash</td>
+	</tr>
+	<tr>
+		<td><?php echo $user['username'] ?></td>
+		<td><?php echo $user['email'] ?></td>
+		<td><?php echo $user['cash'] ?></td>
+	</tr>
+
+</table>

@@ -8,8 +8,11 @@
  */
 ?>
 
+<h2>Open positions:</h2>
 <?php foreach($positions_to_present as $index => $row) {?>
-    <ul>
+    <div class="position_details">
+        <p>
+        <ul>
         <li>
             <a href="/CodeIgniter_2.1.1/index.php/presentStocks/single_stock/<?php echo $row['symbol']; ?>">
                 Symbol: <?php echo $row['symbol']; ?>
@@ -20,7 +23,7 @@
         <?php $current_price = $current_prices[$row['id']] ?>
         <li>Current Price: <?= $current_price ?></li>
         <?php $profit = $profits_for_position_id[$row['id']]; ?>
-        <li>Profit (not random): <?php echo $profit; ?></li>
+        <li>Profit: <?php echo $profit; ?></li>
         <?php $session_data = $this->session->all_userdata(); ?>
         <?php if ($session_data['activeuser'] == $user['username']) { ?>
         <li>
@@ -35,10 +38,12 @@
                 -->
                 <input name="add_to_cash" value="<?php echo ($current_price * $row['amount']) ?>" type="hidden" />
 
-                <input type="submit" value="Sell">
+                <input class="btn btn-primary" type="submit" value="Sell">
             </form>
         </li>
         <?php } ?>
-    </ul>
+        </ul>   
+    </p>
+    </div>
 
 <?php } ?>

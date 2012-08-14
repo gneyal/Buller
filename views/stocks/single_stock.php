@@ -31,7 +31,7 @@ $session_data = $this->session->all_userdata();
 
             <input type="hidden" name="symbol" value="<?php echo($symbol);?>" />
             <input type="hidden" name="buy_price" value="<?php echo $price; ?>" />
-            <input type="submit" value="Buy" />
+            <input class="btn btn-primary" type="submit" value="Buy" />
         </form>
     </li>
 </ul>

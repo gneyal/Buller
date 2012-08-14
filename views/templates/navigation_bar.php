@@ -9,6 +9,7 @@
 ?>
 
 <nav class="navig">
+	<h3 class="logo">Bulller</h3>
     <ul>
         <li><a href="/CodeIgniter_2.1.1/index.php/users/single/<?php echo $this->session->userdata('activeuser'); ?>"><?php echo $this->session->userdata('activeuser'); ?></a></li>
         <li><a href="/CodeIgniter_2.1.1/index.php/users/">Users List</a></li>

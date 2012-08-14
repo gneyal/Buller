@@ -9,15 +9,16 @@
 ?>
 
 <?php foreach ($users as $user) { ?>
-<ul>
-    <li>
-        <a href="/CodeIgniter_2.1.1/index.php/users/single/<?php echo $user['username'] ?>">
-        <?php echo $user['username'] ?>
-        </a>
-    </li>
-
-    <li><?php echo $user['email'] ?></li>
-    <li>Cash: <?php echo $user['cash']; ?></li>
-    <li>Profit: <?php echo $users_by_profit[$user['username']]; ?></li>
-</ul>
+<div class="user_summary">
+	<ul>
+		<li class="user_name">
+		    <a href="/CodeIgniter_2.1.1/index.php/users/single/<?php echo $user['username'] ?>">
+		        <?php echo $user['username'] ?>
+	        </a>
+	    </li>
+	    <li class="user_email"><?php echo $user['email'] ?></li>
+	    <li class="user_cash">Cash: <?php echo $user['cash']; ?></li>
+	    <li class="user_profit">Profit: <?php echo $users_by_profit[$user['username']]; ?></li>
+	</ul>
+</div>
 <?php } ?>

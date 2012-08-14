@@ -1,0 +1,129 @@
+/* my bootstrap style */
+
+.button_list li{
+	padding: 1em;
+	display: inline;
+	line-height: 4em;
+}
+
+.center-div {
+	
+    font-family: sans-serif;
+    width: 800px;
+    
+    margin: auto;
+    margin-top: 100px;
+}
+
+.main-content-div {
+	min-height:700px;
+}
+
+
+/* 
+	footer
+*/
+
+.footer {
+	border-top: solid 1px;
+	padding: 1em;
+}
+
+/* 
+	for gate page 
+*/
+
+.buller_title_gate {
+	padding-top: 40px;
+	text-align: center;
+	font-size: 550%;
+
+}
+
+.subtitle_gate {
+	padding-top: 20px;
+	text-align: center;
+	font-size: 250%;
+}
+
+/* links to login and signup */
+
+.gate_login_signup_links {
+	text-align: center;
+	padding-top: 40px;
+}
+.gate_login_signup_links a {
+	text-decoration: none; 
+	color: white;
+}
+.gate_login_signup_links li {
+	display: inline;
+	padding: 20px;
+}
+
+.gate_image {
+	margin-left: 50px;	
+}
+
+/*
+	presenting users
+*/
+
+.user_summary {
+	border-radius: 6px;
+	border: solid 2px;
+	margin: 20px;
+	padding: 20px;
+}
+
+.user_summary ul {
+	list-style: none;
+}
+.user_summary li {
+	display: inline;
+}
+.user_summary .user_name {
+	font-size: 20px;
+}
+
+.user_summary .user_email {
+	font-size: 14px;
+}
+
+.user_summary .user_profit {
+	font-size: 20px;
+	color: red;
+}
+
+/*
+	presenting positions
+*/
+
+.position_details {
+	border-radius: 6px;
+	border: solid 1px;
+	margin: 20px;
+	padding: 20px;
+}
+.position_details p {
+	font-size: 200%;
+}
+.position_details li {
+	list-style: none;
+
+}
+
+/* 
+	presenting stocks
+*/
+
+.stock_market_details li {
+	list-style: none;
+}
+
+.stock_summary {
+	border-radius: 6px;
+	border: solid 2px;
+	margin: 20px;
+	padding: 20px;
+}

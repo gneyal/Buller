@@ -21,15 +21,10 @@ class Signup extends CI_Controller
 
         $this->load->library('form_validation');
 
-        // TODO: need to change that to the noraml presentation of things using templates.
-
-
         $data['title'] = 'Login or Signup'; // for the title template
 
         $this->load->view('templates/header', $data);
-        //$this->load->view('templates/navigation_bar', $data);
-        $this->load->view('templates/buller_title');
-        $this->load->view('templates/title', $data);
+        $this->load->view('templates/buller_title_gate');
         $this->load->view('loginsignup/loginsignup');
         $this->load->view('templates/footer');
     }

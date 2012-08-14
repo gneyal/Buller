@@ -32,7 +32,7 @@ class users extends CI_Controller
         // 3. put that list in $data
 
         // 4. load the relevant view
-        $data['title'] = "Users List";
+        $data['title'] = "Leading Bulls";
         $users = $this->user_model->get_users();
 
         $users_by_profit = $this->position_model->get_all_users_total_profit($users);
@@ -42,8 +42,7 @@ class users extends CI_Controller
         $data['users_by_profit'] = $users_by_profit;
 
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/navigation_bar', $data);
-        $this->load->view('templates/buller_title');
+        
         $this->load->view('templates/title', $data);
         $this->load->view('users/users_list', $data);
         $this->load->view('templates/footer');
@@ -85,8 +84,6 @@ class users extends CI_Controller
 
 //        // 4. load the view with data
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/navigation_bar', $data);
-        $this->load->view('templates/buller_title');
         $this->load->view('templates/title', $data);
         if ($this->session->userdata('notice')) {
             $data['notice'] = $this->session->userdata('notice');
