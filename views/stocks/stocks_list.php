@@ -33,14 +33,16 @@
             <li>Change and Percent Change: <?php echo $change; ?> </li>
             <li>Volume: <?php echo $volume; ?> </li>
             <?php $session_data = $this->session->all_userdata(); ?>
-            <form method="post" action="/CodeIgniter_2.1.1/index.php/users/buy">
-                <input type="text" name="amount" />
-                <input type="hidden" name="username" value="<?php echo $session_data['activeuser']; ?>" />
+            <li>
+                <form method="post" action="/CodeIgniter_2.1.1/index.php/users/buy">
+                    <input type="text" name="amount" />
+                    <input type="hidden" name="username" value="<?php echo $session_data['activeuser']; ?>" />
 
-                <input type="hidden" name="symbol" value="<?php echo($symbol);?>" />
-                <input type="hidden" name="buy_price" value="<?php echo $price; ?>" />
-                <input class="btn btn-primary"type="submit" value="Buy" />
-            </form>
+                    <input type="hidden" name="symbol" value="<?php echo($symbol);?>" />
+                    <input type="hidden" name="buy_price" value="<?php echo $price; ?>" />
+                    <input class="btn btn-primary" type="submit" value="Buy" />
+                </form>
+            </li>
         </ul>
     </div>
 <?php } ?>

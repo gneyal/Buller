@@ -13,7 +13,7 @@ $this->load->helper('url');
 <html>
 <head>
     <link rel="stylesheet" href="<?php echo base_url() ?>application/CIFormTutorial/views/assets/css/style.css" type="text/css" media="screen">
-<link rel="stylesheet" href="<?php echo base_url() ?>application/CIFormTutorial/views/assets/css/my_bootstrap_style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo base_url() ?>application/CIFormTutorial/views/assets/css/my_bootstrap_style.css" type="text/css" media="screen">
     <link href="<?php echo base_url() ?>application/CIFormTutorial/views/assets/css/bootstrap.css" rel="stylesheet">
     <link href="views/assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="views/assets/css/docs.css" rel="stylesheet">

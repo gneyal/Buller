@@ -11,8 +11,16 @@ $this->load->helper('url');
 
 
 <ul class="gate_login_signup_links">
-    <li><button class="btn btn-primary btn-large"><a href="/CodeIgniter_2.1.1/index.php/signup/login"> Login </a></button></li>
-    <li><button class="btn btn-info btn-large"><a href="/CodeIgniter_2.1.1/index.php/signup/signups">Sign Up</a></button></li>
+    <li>
+	    <form style="display: inline" action="/CodeIgniter_2.1.1/index.php/signup/signups" method="get">
+	 		<button class="btn btn-primary btn-large">Sign Up</button>
+		</form>
+	</li>
+    <li>
+	    <form style="display: inline" action="/CodeIgniter_2.1.1/index.php/signup/login" method="get">
+	 		<button class="btn btn-info btn-large">Login</button>
+		</form>
+	</li>
 </ul>
 
 

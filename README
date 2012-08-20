@@ -1,3 +1,39 @@
+Buller - Follow Profitable Portfolios
+
+I will now describe the site features in words:
+
+Every page has the navigation bar in it.
+
+Navigation bar:
+	The navigation bar functions differently when logged-in Vs. when logged-out.
+	Logged-in:
+		You - access your private acount directly.
+		Users - Go to users list.
+		Stocks - Go to stocks list.
+		Logout - Logout and redirected to the home page.
+	Logged-out:
+		Signin - sign in to the site.
+		Login - login, go to users page.
+
+Single User Page:
+	You are able to go over other users details in this page.
+	If you enter your Single User Page then you can also Sell stocks (or "close" positions)
+
+Users page:
+	In this page you can see all the users sorted by the user portfolio profit (where most profitable is on top).
+	From this page you can access the single user page of each user on that list.
+
+Stocks page:
+	In this page you can see the stocks that are available to buy. The list is currently maintained by hand, and includs only 5 stocks (Microsoft, Amazon, Google, Vista Gold and Yahoo!). This is due to the high latency from Yahoo!(I use the data from Yahoo!)
+
+Single stock page:
+	Here you can see more details about a certain stock, you can also Buy it here.
+
+
+Under the hood:
+	I use MD5 for password cashing.
+	CodeIgniter is used.
+	
 Database setup:
 
 mysql> describe users;
